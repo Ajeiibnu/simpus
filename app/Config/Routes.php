@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('pagesController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,7 +31,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'pagesController::index');
+$routes->get('/Home', 'pagesController::Home');
+$routes->get('/DataObat', 'pagesController::DataObat');
+$routes->get('/DataObatMasuk', 'pagesController::DataObatMasuk');
+$routes->get('/DataObatKeluar', 'pagesController::DataObatKeluar');
+$routes->get('/DataObatKadaluarsa', 'pagesController::DataObatKadaluarsa');
+$routes->get('/Reports', 'pagesController::Reports');
+$routes->get('/Setting', 'pagesController::Setting');
 
 /*
  * --------------------------------------------------------------------
